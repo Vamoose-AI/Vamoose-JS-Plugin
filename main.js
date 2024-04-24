@@ -44,7 +44,7 @@
                 initPlugin();
             })
             .catch(error => {
-                console.error('Error retrieving CTA:', error);
+                console.error(`Error retrieving CTA: ${error}`);
             });
     }
 
