@@ -5,14 +5,11 @@
     // Function to identify the current page
     function getCurrentPage() {
         // Return absolute URL or file path
-        // return window.location.href; // or use window.location.pathname for file path
-        // For testing purposes, return a hardcoded URL
-        // return 'https://docs.puppygraph.com/';
-        return 'https://www.stackhawk.com/blog/how-does-stackhawk-work/'
+        return window.location.href;
     }
 
     function loadCTA(url) {
-        fetch(`http://localhost:3030/cta/organization/${organizationID}?url=${url}`)
+        fetch(`https://api.vamoose.ai/cta/organization/${organizationID}?url=${url}`)
             .then(response => response.json())
             .then(data => {
                 // Create the ctaContainer div
@@ -48,7 +45,6 @@
         if (!pluginInitialized) {
             pluginInitialized = true;
             var currentPage = getCurrentPage();
-            console.log("Current Page:", currentPage);
             loadCTA(currentPage);
         }
     }
