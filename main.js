@@ -1,5 +1,5 @@
 (function() {
-    let scriptTag = document.querySelector('script[src="../js-cta-script/main.js"]');
+    let scriptTag = document.querySelector('script[src="https://cdn.jsdelivr.net/gh/Vamoose-AI/Vamoose-JS-Plugin/vamoose.min.js"]');
     let organizationID = scriptTag.getAttribute('data-org-id');
 
     // Function to identify the current page
