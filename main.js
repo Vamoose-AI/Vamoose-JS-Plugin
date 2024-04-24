@@ -4,8 +4,18 @@
 
     // Function to identify the current page
     function getCurrentPage() {
-        // Return absolute URL or file path
-        return window.location.href;
+        try {
+            // Try to access the parent's URL directly
+            if (window.self !== window.top) { // Check if in an iframe
+                return window.parent.location.href;
+            }
+        } catch (e) {
+            // Access is blocked, log the error and fallback
+            console.error("Error accessing window.parent.location.href:", e.message);
+        }
+    
+        // Fallback to document.referrer if direct access fails or not in an iframe
+        return document.referrer;
     }
 
     function loadCTA(url) {
