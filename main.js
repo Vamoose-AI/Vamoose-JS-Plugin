@@ -1,5 +1,5 @@
 (function() {
-    let scriptTag = document.querySelector('script[src="https://cdn.jsdelivr.net/gh/Vamoose-AI/Vamoose-JS-Plugin/vamoose.min.js"]');
+    let scriptTag = document.querySelector('script[src="https://cdn.jsdelivr.net/gh/Vamoose-AI/Vamoose-JS-Plugin/v0.0.1-vamoose.min.js"]');
     let organizationID = scriptTag.getAttribute('data-org-id');
 
     // Function to identify the current page
@@ -15,7 +15,7 @@
         }
     
         // Fallback to document.referrer if direct access fails or not in an iframe
-        return document.referrer;
+        return window.location.href || document.referrer;
     }
 
     function loadCTA(url) {
